@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom variable */
+:root {
+  --primary-clr-100: hsl(0, 100%, 74%);
+  --primary-clr-200: hsl(154, 59%, 51%);
+
+  --accent-clr-100: hsl(248, 32%, 49%);
+
+  --neutral-clr-100: hsl(249, 10%, 26%);
+  --neutral-clr-200: hsl(246, 25%, 77%);
+
+  /* fluid typescale */
+  --step--3: clamp(0.58rem, calc(0.57rem + 0.04vw), 0.61rem);
+  --step--2: clamp(0.69rem, calc(0.67rem + 0.1vw), 0.76rem);
+  --step--1: clamp(0.83rem, calc(0.79rem + 0.18vw), 0.95rem);
+  --step-0: clamp(1rem, calc(0.93rem + 0.28vw), 1.19rem);
+  --step-1: clamp(1.2rem, calc(1.1rem + 0.43vw), 1.48rem);
+  --step-2: clamp(1.44rem, calc(1.29rem + 0.62vw), 1.86rem);
+  --step-3: clamp(1.73rem, calc(1.52rem + 0.89vw), 2.32rem);
+  --step-4: clamp(2.07rem, calc(1.78rem + 1.24vw), 2.9rem);
+  --step-5: clamp(2.49rem, calc(2.09rem + 1.71vw), 3.62rem);
+
+  /* fluid spacing */
+  --space-s: clamp(1.31rem, calc(1.25rem + 0.28vw), 1.5rem);
+  --space-m: clamp(2rem, calc(1.91rem + 0.38vw), 2.25rem);
+  --space-l: clamp(2.63rem, calc(2.49rem + 0.56vw), 3rem);
+
+  --space-3xs-2xs: clamp(0.31rem, calc(0.16rem + 0.66vw), 0.75rem);
+  --space-2xs-xs: clamp(0.69rem, calc(0.53rem + 0.66vw), 1.13rem);
+  --space-xs-s: clamp(1rem, calc(0.82rem + 0.75vw), 1.5rem);
+  --space-s-m: clamp(1.31rem, calc(0.98rem + 1.41vw), 2.25rem);
+  --space-m-l: clamp(2rem, calc(1.65rem + 1.5vw), 3rem);
+  --space-l-xl: clamp(2.63rem, calc(1.96rem + 2.82vw), 4.5rem);
+  --space-xl-2xl: clamp(3.94rem, calc(3.21rem + 3.1vw), 6rem);
+  --space-2xl-3xl: clamp(5.25rem, calc(3.93rem + 5.63vw), 9rem);
+}
+
+body {
+  display: grid;
+  place-content: center;
+  background-color: var(--primary-clr-100);
+  color: white;
+  font-size: var(--step-0);
+  font-family: "Poppins", sans-serif;
+  background-image: url("./images/bg-intro-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (min-width: calc(768rem/16)) {
+  body {
+    background-image: url("./images/bg-intro-desktop.png");
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-weight: 700;
+  padding-inline: var(--space-s-m);
+}
+
+main {
+  min-width: calc(375rem / 16);
+  max-width: calc(1440rem / 16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+main > * {
+  text-align: center;
+}
+
+@media only screen and (min-width: calc(768rem/16)) {
+  main {
+    flex-direction: row;
+  }
+
+  main > * {
+    flex-basis: 50%;
+  }
+
+  .copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .copy > * {
+    text-align: start;
+    padding-inline-start: var(--space-s-m);
+    padding-inline-end: 0;
+  }
+
+  .copy > h1 {
+    max-width: 20ch;
+    font-size: var(--step-4);
+  }
+}
+
+input {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--neutral-clr-200);
+  border-radius: var(--space-3xs-2xs);
+  padding: var(--space-xs-s);
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+
+.stack-l > * + * {
+  margin-block-start: var(--space-m-l);
+}
+.stack-m > * + * {
+  margin-block-start: var(--space-s-m);
+}
+.stack-s > * + * {
+  margin-block-start: var(--space-xs-s);
+}
+
+.box-l {
+  padding: var(--space-m-l);
+}
+
+.box-m {
+  padding: var(--space-s-m);
+}
+
+.button {
+  display: block;
+  color: inherit;
+  background-color: grey;
+  border: none;
+  border-radius: var(--space-3xs-2xs);
+  width: 100%;
+  padding: var(--space-xs-s);
+  font-size: var(--step--1);
+}
+
+.button[data-background="purple"] {
+  font-weight: 400;
+  padding-inline: var(--space-xl-2xl);
+  background-color: var(--accent-clr-100);
+}
+
+.button[data-background="green"] {
+  background-color: var(--primary-clr-200);
+  box-shadow: inset 0px -5px 0px -1px rgba(0, 0, 0, 0.15);
+}
+
+.wrapper {
+  background-color: white;
+  border-radius: var(--space-2xs-xs);
+}
+
+.wrapper > * + * {
+  color: var(--neutral-clr-200);
+  padding-inline: var(--space-xs-s);
+  font-size: var(--step--2);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.bold[data-color="orange"] {
+  color: var(--primary-clr-100);
+}
+
+.text-transform\:uppercase {
+  text-transform: uppercase;
+}
+
+.box-shadow {
+  box-shadow: 0px 8px 0px -1px rgba(0, 0, 0, 0.15);
+}
