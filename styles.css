@@ -142,7 +142,7 @@ h1 {
 
 main {
   min-width: calc(320rem / 16);
-  max-width: calc(1140rem / 16);
+  max-width: calc(1280rem / 16);
   display: flex;
   flex-direction: column;
   gap: var(--space-s);
@@ -227,6 +227,12 @@ input {
 .button[data-background="green"] {
   background-color: var(--primary-clr-200);
   box-shadow: inset 0px -5px 0px -1px rgba(0, 0, 0, 0.15);
+  transition: opacity 150ms ease-in;
+}
+
+.button[data-background="green"]:hover,
+.button[data-background="green"]:active {
+  opacity: 0.7;
 }
 
 .wrapper {
@@ -248,6 +254,7 @@ input:invalid:focus {
   background-origin: padding-box;
   background-clip: padding-box;
   outline: 1px solid var(--primary-clr-100);
+  transition: outline 150ms ease-in;
 }
 
 input:invalid:focus + p {
@@ -256,6 +263,7 @@ input:invalid:focus + p {
 
 input:valid:focus {
   outline: 1px solid var(--accent-clr-100);
+  transition: outline 150ms ease-in;
 }
 
 .error-message {
