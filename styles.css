@@ -240,6 +240,34 @@ input {
   font-size: var(--step--2);
 }
 
+input:invalid:focus {
+  background-image: url("./images/icon-error.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center right 6%;
+  background-origin: padding-box;
+  background-clip: padding-box;
+  outline: 1px solid var(--primary-clr-100);
+}
+
+input:invalid:focus + p {
+  display: block;
+}
+
+input:valid:focus {
+  outline: 1px solid var(--accent-clr-100);
+}
+
+.error-message {
+  color: var(--primary-clr-100);
+  font-size: var(--step--2);
+  margin-block-start: 0.5em;
+  font-weight: 500;
+  text-align: end;
+  font-style: italic;
+  display: none;
+}
+
 .bold {
   font-weight: 700;
 }
